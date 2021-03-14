@@ -3,7 +3,7 @@ $arr = json_decode($body, true);
  
 include_once ('telegramgclass.php');   
 
-$tg = new tg('токен который вы получили');
+$tg = new tg('1681935656:AAGG7bpYJFly7eMWpGnondSOrguLtT27mLo');
 
 $chat_id = $arr['message']['chat']['id'];
 $userTgId = $arr['message']['from']['id'];
