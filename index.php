@@ -7,7 +7,7 @@ file_put_contents('file.txt', '$data: '.print_r($data, 1)."\n", FILE_APPEND);
 //https://api.telegram.org/bot*TOKEN*/setwebhook?url=*URL*
 
 # Переменные
-$token = '';
+$token = '1681935656:AAGG7bpYJFly7eMWpGnondSOrguLtT27mLo';
 
 # Обрабатываем команды
 $message = $data['message']['text'];
