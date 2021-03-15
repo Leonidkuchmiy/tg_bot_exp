@@ -17,13 +17,11 @@ $sms_rev='';
 	
 	switch($message_text){
 		case '/start':
-			$sms_rev = 'Здравствуйте, Вас приветсвует Простейший Бот Telegram!
-';
+			$sms_rev = 'Здравствуйте, Вас приветсвует Простейший Бот Telegram!';
 		break;
 		case '/help':
 			$sms_rev = 'Я могу выполнить следующюю функцию:
-			/rev - переворачиваею строку наоборот.
-';	
+			/rev - переворачиваею строку наоборот.';	
 		break;	
 
 		case '/rev':
@@ -35,7 +33,5 @@ $sms_rev='';
 		break;	
 	}
 
-$tg->send($tg_id, $sms_rev, $rez_kb);
-exit('ok'); // говорим телеге, что все окей
-?>
+$tg->send($tg_id, $sms_rev, $rez_kb); // говорим телеге, что все окей
 ?>
