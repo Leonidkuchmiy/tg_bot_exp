@@ -1,7 +1,7 @@
 
 <?php
 define('TGKEY', '1681935656:AAGG7bpYJFly7eMWpGnondSOrguLtT27mLo');
-include_once('tg.class.php');
+include_once('telegramgclass.php');
 
 $body = file_get_contents('php://input');
 $arr = json_decode($body, true); 
