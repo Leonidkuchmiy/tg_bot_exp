@@ -8,14 +8,12 @@ $bot_api = 'https://api.telegram.org/bot'.$bot_access_token;
 // распарсиваем в ассоциативный массив
 $input_array = json_decode(file_get_contents('php://input'),TRUE);
 
- if(isset($input_array['message'])){
-	$chat_id = $input_array['message']['chat']['id'];
-	 $message = $input_array['message']['text']; 
+ while(!isset($input_array['message'])){
+	 $input_array = json_decode(file_get_contents('php://input'),TRUE);
  }// выделяем идентификатор чата
-else{
-	exit(0);
-}
  
+$chat_id = $input_array['message']['chat']['id'];
+$message = $input_array['message']['text']; 
 // начинаем распарсивать полученное сообщение
 $command = '';          // команды нет
 $user_chat_id = '';     // адресат не определён
