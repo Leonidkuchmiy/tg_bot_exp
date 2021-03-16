@@ -10,10 +10,16 @@ $input_array = json_decode(file_get_contents('php://input'),TRUE);
  if($input_array['message']['chat']['id']!=0){
 	$chat_id = $input_array['message']['chat']['id'];
  }// выделяем идентификатор чата
+else{
+	exir(0);
+}
 
 if($input_array['message']['text']!=0){
 	$message = $input_array['message']['text']; 
 }// выделяем сообщение
+else{
+	exit(0);
+}
  
 // начинаем распарсивать полученное сообщение
 $command = '';          // команды нет
