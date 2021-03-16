@@ -86,4 +86,4 @@ switch($command){
 function sendMessage($var_chat_id,$var_message){
     file_get_contents($GLOBALS['bot_api'].'/sendMessage?chat_id='.$var_chat_id.'&text='.urlencode($var_message));
 }
-?>;
+?>
