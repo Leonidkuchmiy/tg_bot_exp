@@ -7,13 +7,10 @@ $bot_api = 'https://api.telegram.org/bot'.$bot_access_token;
 // получаем то, что передано боту в POST-сообщении и
 // распарсиваем в ассоциативный массив
 $input_array = json_decode(file_get_contents('php://input'),TRUE);
-
- while(!isset($input_array['message'])){
-	 $input_array = json_decode(file_get_contents('php://input'),TRUE);
- }// выделяем идентификатор чата
- 
+if($input_array){	
 $chat_id = $input_array['message']['chat']['id'];
 $message = $input_array['message']['text']; 
+	
 // начинаем распарсивать полученное сообщение
 $command = '';          // команды нет
 $user_chat_id = '';     // адресат не определён
@@ -80,7 +77,10 @@ switch($command){
         sendMessage($chat_id,'неизвестная команда');
     break;
 }
- 
+}
+else{
+    print("Hello, I am bot! My name is @[BOTNAME]. Bla-bla-bla...");
+}
 /* Функция отправки сообщения в чат с использованием метода sendMessage*/
 function sendMessage($var_chat_id,$var_message){
     file_get_contents($GLOBALS['bot_api'].'/sendMessage?chat_id='.$var_chat_id.'&text='.urlencode($var_message));
