@@ -7,16 +7,11 @@ $bot_api = 'https://api.telegram.org/bot'.$bot_access_token;
 // получаем то, что передано боту в POST-сообщении и
 // распарсиваем в ассоциативный массив
 $input_array = json_decode(file_get_contents('php://input'),TRUE);
- if($input_array['message']['chat']['id']!=0){
-	$chat_id = $input_array['message']['chat']['id'];
- }// выделяем идентификатор чата
-else{
-	exir(0);
-}
 
-if($input_array['message']['text']!=0){
-	$message = $input_array['message']['text']; 
-}// выделяем сообщение
+ if(isset($input_array['message'])){
+	$chat_id = $input_array['message']['chat']['id'];
+	 $message = $input_array['message']['text']; 
+ }// выделяем идентификатор чата
 else{
 	exit(0);
 }
