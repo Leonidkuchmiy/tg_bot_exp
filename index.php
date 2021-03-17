@@ -82,7 +82,7 @@ else{
     print("Hello, I am bot! My name is @[BOTNAME]. Bla-bla-bla...");
 }
 /* Функция отправки сообщения в чат с использованием метода sendMessage*/
-function sendMessage($var_chat_id,$var_message){
+function sendMessage($var_chat_id,$var_message){ 
     file_get_contents($GLOBALS['bot_api'].'/sendMessage?chat_id='.$var_chat_id.'&text='.urlencode($var_message));
 }
 ?>
